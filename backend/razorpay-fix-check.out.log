@@ -1,0 +1,6 @@
+
+> backend@1.0.0 start
+> node server.js
+
+DB connected
+server Started on PORT: 4011

@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: Outfit;
+  box-sizing: border-box;
+}
+
+:root {
+  --ink: #17130f;
+  --espresso: #2f281f;
+  --olive: #6f7758;
+  --olive-deep: #4e563d;
+  --champagne: #d6b46a;
+  --ivory: #f7f1e7;
+  --cream: #eee4d4;
+  --paper: rgba(255, 252, 246, 0.86);
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  background:
+    radial-gradient(circle at 8% 4%, rgba(214, 180, 106, 0.18), transparent 26rem),
+    radial-gradient(circle at 92% 18%, rgba(111, 119, 88, 0.16), transparent 30rem),
+    linear-gradient(180deg, #fbf8f1 0%, var(--ivory) 48%, #eee4d4 100%);
+  color: var(--ink);
+}
+
+button,
+a,
+input,
+select,
+textarea {
+  transition: all 180ms ease;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--champagne);
+  outline-offset: 3px;
+}
+
+input,
+select,
+textarea {
+  border-color: rgba(47, 40, 31, 0.22) !important;
+  background-color: rgba(255, 252, 246, 0.86);
+  color: var(--ink);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--olive) !important;
+  box-shadow: 0 0 0 3px rgba(111, 119, 88, 0.12);
+}
+
+.app-shell {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.app-content {
+  position: relative;
+  z-index: 1;
+  min-height: 60vh;
+}
+
+.surface-panel {
+  border: 1px solid rgba(214, 180, 106, 0.32);
+  border-radius: 24px;
+  background: var(--paper);
+  box-shadow: 0 20px 55px rgba(47, 40, 31, 0.08);
+  backdrop-filter: blur(16px);
+}
+
+.primary-action {
+  border: 1px solid rgba(214, 180, 106, 0.35);
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--ink), var(--espresso) 52%, var(--olive-deep));
+  color: white;
+  box-shadow: 0 12px 28px rgba(47, 40, 31, 0.2);
+}
+
+.primary-action:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 34px rgba(47, 40, 31, 0.28);
+}
+
+.secondary-action {
+  border: 1px solid rgba(111, 119, 88, 0.5);
+  border-radius: 999px;
+  background: rgba(255, 252, 246, 0.78);
+  color: var(--olive-deep);
+}
+
+.secondary-action:hover {
+  border-color: var(--olive-deep);
+  background: white;
+  transform: translateY(-1px);
+}
+
+.danger-action {
+  border: 1px solid rgba(190, 18, 60, 0.25);
+  border-radius: 999px;
+  background: rgba(255, 241, 242, 0.8);
+  color: #be123c;
+}
+
+.section-copy {
+  color: rgba(47, 40, 31, 0.62);
+}
+
+.page-divider {
+  border-color: rgba(214, 180, 106, 0.34) !important;
+}
+
+.prata-regular {
+  font-family: "Prata", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+a.active hr {
+  display: block;
+  background-color: var(--champagne);
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.Toastify__toast-container {
+  width: min(360px, calc(100vw - 24px));
+}
+
+.forever-action-toast {
+  min-height: auto !important;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid rgba(214, 180, 106, 0.35);
+  border-radius: 18px !important;
+  background: linear-gradient(135deg, #14110f 0%, #2f281f 52%, #6f7758 100%) !important;
+  color: white !important;
+  box-shadow: 0 22px 55px rgba(20, 17, 15, 0.28) !important;
+}
+
+.forever-action-toast-body {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.forever-action-toast .Toastify__close-button {
+  color: white;
+  opacity: 0.75;
+}
+
+.forever-action-toast-progress {
+  background: linear-gradient(90deg, #d6b46a, #f4efe6) !important;
+}
+
+.forever-toast-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+}
+
+.forever-toast-icon {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  place-items: center;
+  border-radius: 999px;
+  color: #1f1a16;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.forever-toast-icon.cart {
+  background: #f4efe6;
+}
+
+.forever-toast-icon.wishlist {
+  background: #ffe4e6;
+  color: #be123c;
+}
+
+.forever-toast-title {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.forever-toast-message {
+  margin-top: 2px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+@media (max-width:640px) {
+  a.active {
+    background-color: var(--olive-deep);
+    color: white;
+  }
+}
